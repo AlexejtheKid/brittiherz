@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#050505" />
+  <title>QR-Code fuer Brittas Paris-Seite</title>
+  <style>
+    :root { color-scheme: dark; --bg:#050505; --ink:#f5f5f7; --muted:#a1a1a6; --line:rgba(255,255,255,.14); --gold:#f6d49f; --blue:#a8dbff; --rose:#ffd2e3; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; display:grid; place-items:center; padding:24px; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background: radial-gradient(circle at 20% 10%, rgba(246,212,159,.22), transparent 30rem), radial-gradient(circle at 80% 20%, rgba(168,219,255,.20), transparent 30rem), #050505; }
+    main { width:min(100%,860px); border:1px solid var(--line); border-radius:36px; background:rgba(255,255,255,.07); box-shadow:0 30px 120px rgba(0,0,0,.45); backdrop-filter:blur(22px); padding:clamp(24px,5vw,54px); text-align:center; }
+    h1 { font-size:clamp(36px,7vw,78px); letter-spacing:-.07em; line-height:.92; margin:0 0 16px; }
+    p { color:rgba(255,255,255,.68); font-size:17px; line-height:1.45; margin:0 auto 24px; max-width:650px; }
+    .qr-wrap { display:inline-grid; place-items:center; padding:18px; border-radius:30px; background:#fff; margin:12px 0 22px; box-shadow:0 24px 80px rgba(0,0,0,.38); }
+    img { width:min(70vw,340px); height:auto; display:block; }
+    input { width:min(100%,650px); border:1px solid var(--line); border-radius:999px; padding:15px 18px; background:rgba(255,255,255,.08); color:#fff; outline:none; font:inherit; margin:0 auto 14px; display:block; }
+    .buttons { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    button, a { border:0; border-radius:999px; padding:13px 16px; font-weight:850; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; justify-content:center; gap:8px; }
+    button { background:#f5f5f7; color:#111; }
+    a { background:rgba(255,255,255,.1); color:#fff; border:1px solid var(--line); }
+    small { display:block; color:rgba(255,255,255,.45); margin-top:20px; line-height:1.45; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>QR-Code f&uuml;r Brittas Paris-Seite</h1>
+    <p>Nach dem Hochladen der Webseite wird hier automatisch ein QR-Code zur Startseite erzeugt. Alternativ kannst du die finale URL unten eintragen.</p>
+    <input id="url" type="url" aria-label="URL der Paris-Seite" />
+    <div class="qr-wrap"><img id="qr" alt="QR-Code zur Paris-Reiseseite" /></div>
+    <div class="buttons">
+      <button id="refresh" type="button">QR aktualisieren</button>
+      <a id="openLink" href="index.html">Reiseseite &ouml;ffnen</a>
+      <a id="downloadLink" download="britta-paris-qr.png">QR speichern</a>
+    </div>
+    <small>Hinweis: Der QR-Code wird &uuml;ber einen &ouml;ffentlichen QR-Bilddienst als PNG erzeugt. F&uuml;r den pers&ouml;nlichen Gebrauch reicht das in der Regel v&ouml;llig aus.</small>
+  </main>
+  <script>
+    const input = document.getElementById('url');
+    const qr = document.getElementById('qr');
+    const openLink = document.getElementById('openLink');
+    const downloadLink = document.getElementById('downloadLink');
+    const startUrl = new URL('index.html', location.href).href;
+    input.value = startUrl;
+    function update() {
+      const value = input.value.trim() || startUrl;
+      const src = 'https://api.qrserver.com/v1/create-qr-code/?size=1200x1200&margin=28&data=' + encodeURIComponent(value);
+      qr.src = src;
+      openLink.href = value;
+      downloadLink.href = src;
+    }
+    document.getElementById('refresh').addEventListener('click', update);
+    input.addEventListener('change', update);
+    update();
+  </script>
+</body>
+</html>

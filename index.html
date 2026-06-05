@@ -1,0 +1,1895 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#050505" />
+  <meta name="description" content="Brittas private Paris-Geburtstagsreise als moderne Scroll-Story." />
+  <meta property="og:title" content="Paris. F&uuml;r uns. F&uuml;r dich." />
+  <meta property="og:description" content="Eine kleine Schatzkarte f&uuml;r Brittas 40. Geburtstag." />
+  <meta property="og:image" content="assets/crew-britta.jpg" />
+  <title>Paris. F&uuml;r uns. F&uuml;r dich.</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-2: #0f1015;
+      --ink: #f5f5f7;
+      --muted: rgba(245,245,247,.68);
+      --quiet: rgba(245,245,247,.46);
+      --line: rgba(255,255,255,.16);
+      --line-strong: rgba(255,255,255,.28);
+      --card: rgba(255,255,255,.074);
+      --card-strong: rgba(255,255,255,.12);
+      --glass: rgba(18,18,22,.64);
+      --gold: #f6d49f;
+      --rose: #ffd2e3;
+      --blue: #a8dbff;
+      --green: #bcf2d0;
+      --shadow: 0 30px 110px rgba(0,0,0,.48);
+      --radius-xl: 44px;
+      --radius-lg: 30px;
+      --radius-md: 22px;
+      --max: 1180px;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; background: var(--bg); scroll-padding-top: 94px; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 12% 6%, rgba(246,212,159,.24), transparent 34rem),
+        radial-gradient(circle at 85% 12%, rgba(168,219,255,.20), transparent 32rem),
+        radial-gradient(circle at 48% 60%, rgba(255,210,227,.10), transparent 44rem),
+        linear-gradient(180deg, #050505 0%, #101116 42%, #060607 100%);
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -3;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 68px 68px;
+      mask-image: linear-gradient(to bottom, transparent, black 16%, black 74%, transparent);
+      opacity: .34;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background: radial-gradient(circle at 50% 0%, rgba(255,255,255,.08), transparent 46rem);
+    }
+
+    a { color: inherit; }
+    button, input { font: inherit; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3, p { margin-top: 0; }
+    ::selection { background: rgba(246,212,159,.35); }
+
+    .progress {
+      position: fixed;
+      inset: 0 auto auto 0;
+      width: 100%;
+      height: 3px;
+      background: rgba(255,255,255,.08);
+      z-index: 2000;
+    }
+    .progress span {
+      display: block;
+      width: 0%;
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--gold), var(--blue), var(--rose));
+      box-shadow: 0 0 28px rgba(255,255,255,.46);
+    }
+
+    .container {
+      width: min(calc(100% - 36px), var(--max));
+      margin-inline: auto;
+    }
+
+    .glass {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.105), rgba(255,255,255,.055));
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(26px) saturate(145%);
+      -webkit-backdrop-filter: blur(26px) saturate(145%);
+    }
+
+    .nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1600;
+      width: min(calc(100% - 28px), 1040px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 10px 12px 10px 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(9,9,12,.62);
+      border-radius: 999px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.34);
+      backdrop-filter: blur(28px) saturate(160%);
+      -webkit-backdrop-filter: blur(28px) saturate(160%);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+      font-weight: 760;
+      letter-spacing: -.01em;
+      color: rgba(255,255,255,.88);
+      font-size: 13px;
+    }
+    .brand-mark {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #121212;
+      background: linear-gradient(135deg, #fff, var(--gold) 48%, var(--blue));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.75), 0 12px 30px rgba(246,212,159,.20);
+    }
+    .brand-mark svg, .eiffel-hero-mark svg, .eiffel-ghost svg {
+      display: block;
+    }
+    .eiffel-svg path, .eiffel-svg line, .eiffel-svg polyline {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      vector-effect: non-scaling-stroke;
+    }
+    .brand-mark .eiffel-svg { width: 18px; height: 18px; }
+    .brand-mark img, .eiffel-hero-mark img, .eiffel-ghost img {
+      display: block;
+      object-fit: contain;
+    }
+    .brand-mark img { width: 22px; height: 22px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar { display: none; }
+    .nav a {
+      text-decoration: none;
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      font-weight: 750;
+      padding: 8px 11px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: .25s ease;
+    }
+    .nav a:hover, .nav a:focus-visible {
+      color: #111;
+      background: rgba(255,255,255,.92);
+      outline: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      padding: 112px 0 70px;
+      overflow: clip;
+    }
+    .hero-bg-photo {
+      position: absolute;
+      inset: -8% -6% auto auto;
+      width: min(72vw, 860px);
+      height: min(88vh, 880px);
+      background: url('assets/crew-britta.jpg') center 45% / cover no-repeat;
+      filter: blur(42px) saturate(125%);
+      opacity: .16;
+      transform: rotate(-5deg);
+      z-index: -1;
+      border-radius: 60px;
+    }
+    .float-orb {
+      position: absolute;
+      width: 22rem;
+      height: 22rem;
+      border-radius: 50%;
+      filter: blur(10px);
+      opacity: .28;
+      pointer-events: none;
+      animation: floaty 9s ease-in-out infinite;
+      z-index: -1;
+    }
+    .orb-1 { top: 18%; left: -8rem; background: radial-gradient(circle, rgba(246,212,159,.55), transparent 68%); }
+    .orb-2 { bottom: 10%; right: -9rem; background: radial-gradient(circle, rgba(168,219,255,.45), transparent 70%); animation-delay: -3s; }
+    .orb-3 { top: 6rem; right: 22%; width: 14rem; height: 14rem; background: radial-gradient(circle, rgba(255,210,227,.48), transparent 70%); animation-delay: -6s; }
+    @keyframes floaty { 0%,100% { transform: translate3d(0,0,0) scale(1); } 50% { transform: translate3d(16px,-22px,0) scale(1.04); } }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .72fr);
+      gap: clamp(34px, 6vw, 92px);
+      align-items: center;
+    }
+    .eyebrow, .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      color: rgba(255,255,255,.76);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .01em;
+      margin-bottom: 22px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 20px rgba(188,242,208,.8);
+    }
+    .hero-badge-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .hero-badge-row .eyebrow { margin-bottom: 0; }
+    .eiffel-hero-mark {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: rgba(255,255,255,.94);
+      background:
+        radial-gradient(circle at 28% 18%, rgba(255,255,255,.40), transparent 42%),
+        linear-gradient(145deg, rgba(246,212,159,.94), rgba(255,210,227,.70) 52%, rgba(168,219,255,.82));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.42), 0 24px 58px rgba(246,212,159,.18);
+    }
+    .eiffel-hero-mark .eiffel-svg { width: 26px; height: 26px; filter: drop-shadow(0 10px 18px rgba(0,0,0,.18)); }
+    .eiffel-hero-mark img { width: 42px; height: 42px; filter: drop-shadow(0 10px 18px rgba(0,0,0,.20)); }
+    .eiffel-ghost {
+      position: absolute;
+      right: clamp(16px, 9vw, 148px);
+      top: clamp(98px, 18vh, 190px);
+      width: clamp(120px, 17vw, 230px);
+      color: rgba(255,255,255,.08);
+      transform: rotate(-7deg);
+      z-index: -1;
+      pointer-events: none;
+      filter: drop-shadow(0 50px 80px rgba(246,212,159,.16));
+    }
+    .eiffel-ghost .eiffel-svg { width: 100%; height: auto; }
+    .eiffel-ghost .eiffel-svg path, .eiffel-ghost .eiffel-svg line, .eiffel-ghost .eiffel-svg polyline { stroke-width: 2.15; }
+    .eiffel-ghost img { width: 100%; height: auto; opacity: .82; }
+    h1 {
+      font-size: clamp(54px, 9.8vw, 128px);
+      line-height: .86;
+      letter-spacing: -.078em;
+      margin: 0 0 24px;
+      max-width: 860px;
+    }
+    .hero-title span {
+      display: block;
+      background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,.62) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-title .warm {
+      background: linear-gradient(90deg, #fff, var(--gold) 32%, var(--rose) 64%, var(--blue));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .lead {
+      max-width: 720px;
+      font-size: clamp(19px, 2.15vw, 29px);
+      line-height: 1.22;
+      letter-spacing: -.032em;
+      color: rgba(255,255,255,.72);
+      margin-bottom: 30px;
+    }
+    .lead strong { color: rgba(255,255,255,.95); font-weight: 760; }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+    }
+    .pill-button, .ghost-button {
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      font-weight: 850;
+      letter-spacing: -.01em;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .pill-button {
+      color: #121212;
+      background: rgba(255,255,255,.94);
+      box-shadow: 0 18px 45px rgba(255,255,255,.12);
+    }
+    .ghost-button {
+      color: rgba(255,255,255,.86);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .pill-button:hover, .ghost-button:hover { transform: translateY(-2px); }
+
+    .paris-signature {
+      margin-top: 22px;
+      width: min(100%, 560px);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 13px 18px 13px 13px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.075);
+      backdrop-filter: blur(24px) saturate(145%);
+      -webkit-backdrop-filter: blur(24px) saturate(145%);
+      box-shadow: 0 20px 55px rgba(0,0,0,.24);
+    }
+    .eiffel-orb {
+      width: 76px;
+      height: 76px;
+      flex: 0 0 76px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 28% 22%, rgba(255,255,255,.30), transparent 34%),
+        linear-gradient(145deg, rgba(255,255,255,.17), rgba(255,255,255,.045));
+      border: 1px solid rgba(255,255,255,.17);
+      overflow: hidden;
+    }
+    .eiffel-orb img {
+      width: 54px;
+      height: 70px;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 24px rgba(246,212,159,.26));
+    }
+    .paris-signature strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1;
+      letter-spacing: -.035em;
+      margin-bottom: 6px;
+    }
+    .paris-signature span {
+      display: block;
+      color: rgba(255,255,255,.62);
+      font-size: 14px;
+      line-height: 1.35;
+    }
+
+    .portrait-wrap {
+      position: relative;
+      min-height: 620px;
+      perspective: 1200px;
+    }
+    .portrait-card {
+      position: relative;
+      height: 600px;
+      border-radius: 46px;
+      overflow: hidden;
+      box-shadow: 0 38px 120px rgba(0,0,0,.55);
+      transform: rotate(1.4deg);
+      background: #111;
+    }
+    .portrait-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.06) 42%, rgba(0,0,0,.72) 100%),
+        radial-gradient(circle at 70% 64%, rgba(255,210,227,.35), transparent 18rem);
+    }
+    .portrait-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 52% 45%;
+      transform: scale(1.01);
+    }
+    .portrait-caption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 3;
+      display: grid;
+      gap: 7px;
+      padding: 18px;
+      border-radius: 28px;
+      background: rgba(8,8,10,.58);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(22px) saturate(145%);
+      -webkit-backdrop-filter: blur(22px) saturate(145%);
+    }
+    .portrait-caption span {
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+    }
+    .portrait-caption strong {
+      font-size: clamp(26px, 3vw, 40px);
+      line-height: .95;
+      letter-spacing: -.06em;
+    }
+    .float-ticket, .countdown-card {
+      position: absolute;
+      z-index: 4;
+      border-radius: 28px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.10);
+      backdrop-filter: blur(22px) saturate(150%);
+      -webkit-backdrop-filter: blur(22px) saturate(150%);
+      box-shadow: 0 24px 70px rgba(0,0,0,.28);
+    }
+    .float-ticket {
+      right: -20px;
+      top: 48px;
+      width: min(72%, 310px);
+      padding: 18px;
+      transform: rotate(-4deg);
+    }
+    .ticket-route {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .airport { font-size: 34px; font-weight: 900; letter-spacing: -.06em; }
+    .city { color: var(--muted); font-size: 12px; font-weight: 760; }
+    .plane-dot {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #111;
+      background: linear-gradient(135deg, #fff, var(--gold));
+    }
+    .countdown-card {
+      left: -16px;
+      bottom: 54px;
+      width: 238px;
+      padding: 16px;
+      transform: rotate(-2deg);
+    }
+    .count-number { font-size: 44px; line-height: .88; letter-spacing: -.065em; font-weight: 900; }
+    .count-label { color: rgba(255,255,255,.64); font-weight: 760; margin-top: 7px; }
+    .count-sub { color: rgba(255,255,255,.46); font-size: 12px; line-height: 1.35; font-weight: 760; margin-top: 8px; }
+
+    .section { padding: clamp(72px, 9vw, 126px) 0; position: relative; }
+    .section-header { max-width: 850px; margin-bottom: 34px; }
+    .section-header.center { text-align: center; margin-inline: auto; }
+    h2 {
+      font-size: clamp(40px, 6.5vw, 86px);
+      line-height: .94;
+      letter-spacing: -.07em;
+      margin: 0 0 18px;
+    }
+    .section-header p, .section-lead {
+      color: rgba(255,255,255,.66);
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.32;
+      letter-spacing: -.025em;
+      margin-bottom: 0;
+    }
+
+    .overview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .stat-card {
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      min-height: 214px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .stat-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -30% -60% auto;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,.18), transparent 70%);
+      pointer-events: none;
+    }
+    .wide { grid-column: span 2; }
+    .tall { min-height: 280px; }
+    .stat-label {
+      color: rgba(255,255,255,.50);
+      text-transform: uppercase;
+      letter-spacing: .09em;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .stat-value {
+      font-size: clamp(30px, 3.8vw, 52px);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      line-height: .96;
+    }
+    .stat-note {
+      color: rgba(255,255,255,.63);
+      line-height: 1.38;
+      font-size: 15px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .crew-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .crew-card {
+      border-radius: 34px;
+      padding: 18px;
+      min-height: 336px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      position: relative;
+    }
+    .crew-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 28% 12%, rgba(246,212,159,.22), transparent 14rem),
+        radial-gradient(circle at 86% 78%, rgba(168,219,255,.16), transparent 13rem),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      pointer-events: none;
+    }
+    .crew-card > * { position: relative; z-index: 2; }
+    .crew-avatar {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 28px;
+      overflow: hidden;
+      margin-bottom: 18px;
+      background:
+        radial-gradient(circle at 30% 18%, rgba(255,255,255,.48), transparent 26%),
+        linear-gradient(145deg, rgba(246,212,159,.88), rgba(255,210,227,.45) 52%, rgba(168,219,255,.72));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.20), 0 24px 60px rgba(0,0,0,.25);
+    }
+    .crew-avatar::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 48%, rgba(0,0,0,.48) 100%),
+        radial-gradient(circle at 78% 16%, rgba(255,255,255,.25), transparent 26%);
+      pointer-events: none;
+    }
+    .crew-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.015);
+      filter: saturate(1.04) contrast(1.02);
+    }
+    .crew-role {
+      display: inline-flex;
+      width: fit-content;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.58);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .crew-card h3 { font-size: 26px; letter-spacing: -.045em; margin: 0 0 8px; }
+    .crew-card p { color: var(--muted); line-height: 1.42; margin-bottom: 0; }
+
+    .crew-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .crew-card {
+      position: relative;
+      min-height: 385px;
+      overflow: hidden;
+      align-content: unset;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px;
+    }
+    .crew-card::before {
+      content: "";
+      position: absolute;
+      inset: -18% -18% auto auto;
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246,212,159,.18), transparent 70%);
+      pointer-events: none;
+    }
+    .crew-card:nth-child(2)::before { background: radial-gradient(circle, rgba(168,219,255,.18), transparent 70%); }
+    .crew-card:nth-child(3)::before { background: radial-gradient(circle, rgba(188,242,208,.16), transparent 70%); }
+    .crew-card:nth-child(4)::before { background: radial-gradient(circle, rgba(255,210,227,.17), transparent 70%); }
+    .crew-photo-shell {
+      position: relative;
+      min-height: 178px;
+      border-radius: 28px;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.13);
+      background:
+        radial-gradient(circle at 20% 18%, rgba(246,212,159,.28), transparent 34%),
+        radial-gradient(circle at 82% 78%, rgba(168,219,255,.22), transparent 36%),
+        linear-gradient(145deg, rgba(255,255,255,.14), rgba(255,255,255,.04));
+    }
+    .crew-photo-shell::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px);
+      background-size: 30px 30px;
+      opacity: .34;
+      mask-image: radial-gradient(circle at 50% 46%, black 0%, transparent 72%);
+      pointer-events: none;
+    }
+    .crew-photo {
+      position: relative;
+      z-index: 2;
+      width: 132px;
+      height: 132px;
+      border-radius: 38px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,.34);
+      box-shadow: 0 22px 52px rgba(0,0,0,.34);
+    }
+    .crew-card:nth-child(1) .crew-photo { object-position: 50% 42%; }
+    .crew-card:nth-child(2) .crew-photo { object-position: 50% 36%; }
+    .crew-card:nth-child(3) .crew-photo { object-position: 50% 43%; }
+    .crew-card:nth-child(4) .crew-photo { object-position: 50% 40%; }
+    .crew-meta { position: relative; z-index: 2; }
+    .crew-meta h3 {
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -.055em;
+      margin-bottom: 8px;
+    }
+    .crew-age {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 13px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.70);
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .boarding-wrap {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .boarding-card {
+      border-radius: 38px;
+      padding: clamp(22px, 3vw, 34px);
+      overflow: hidden;
+      position: relative;
+    }
+    .boarding-card::before {
+      content: "";
+      position: absolute;
+      inset: -40% -35% auto auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(168,219,255,.18), transparent 70%);
+      pointer-events: none;
+    }
+    .flight-tag {
+      color: rgba(255,255,255,.56);
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 26px;
+    }
+    .route-line {
+      display: grid;
+      grid-template-columns: 1fr minmax(120px, .8fr) 1fr;
+      align-items: center;
+      gap: 16px;
+    }
+    .time {
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: .88;
+      font-weight: 920;
+      letter-spacing: -.075em;
+    }
+    .airport-code { color: var(--muted); font-weight: 760; margin-top: 8px; }
+    .duration {
+      display: grid;
+      gap: 8px;
+      justify-items: center;
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+      font-weight: 800;
+      text-align: center;
+    }
+    .duration .bar {
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.72), transparent);
+      position: relative;
+    }
+    .duration .bar::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #fff;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 18px rgba(255,255,255,.85);
+    }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.76);
+      padding: 8px 10px;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .85fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .hotel-main {
+      min-height: 560px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      background: #161616;
+      box-shadow: var(--shadow);
+    }
+    .hotel-main img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+    .hotel-main::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.03) 0%, rgba(0,0,0,.12) 42%, rgba(0,0,0,.72) 100%);
+    }
+    .hotel-overlay {
+      position: absolute;
+      inset: auto 22px 22px 22px;
+      z-index: 2;
+      padding: 22px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(10,10,12,.56);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+    .hotel-overlay h3 { font-size: clamp(30px, 4vw, 54px); line-height: .96; letter-spacing: -.06em; margin-bottom: 12px; }
+    .hotel-overlay p { color: rgba(255,255,255,.68); line-height: 1.42; margin-bottom: 0; }
+    .hotel-side {
+      display: grid;
+      gap: 18px;
+    }
+    .rating-card, .map-card {
+      border-radius: var(--radius-xl);
+      padding: 26px;
+    }
+    .rating-big { font-size: 74px; line-height: .86; font-weight: 920; letter-spacing: -.07em; }
+    .rating-text { color: var(--muted); margin-top: 10px; line-height: 1.42; }
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .amenity {
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      padding: 12px;
+      color: rgba(255,255,255,.76);
+      font-size: 13px;
+      font-weight: 760;
+    }
+    .map-frame {
+      width: 100%;
+      height: 280px;
+      border: 0;
+      border-radius: 28px;
+      filter: saturate(.95) contrast(.95);
+      background: #222;
+    }
+    .map-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .small-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      padding: 10px 13px;
+      color: rgba(255,255,255,.82);
+      background: rgba(255,255,255,.07);
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .gallery-card {
+      position: relative;
+      min-height: 270px;
+      border-radius: 32px;
+      overflow: hidden;
+      background: #151515;
+      border: 1px solid rgba(255,255,255,.12);
+    }
+    .gallery-card img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: transform .5s ease; }
+    .gallery-card:hover img { transform: scale(1.04); }
+    .gallery-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,.75));
+    }
+    .gallery-label {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 2;
+      font-weight: 850;
+      letter-spacing: -.025em;
+    }
+    .gallery-label span { display: block; color: rgba(255,255,255,.62); font-size: 12px; margin-top: 5px; font-weight: 720; }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 240px minmax(0, 1fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .timeline-date, .timeline-body {
+      border-radius: 36px;
+      padding: 26px;
+    }
+    .timeline-date {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 230px;
+    }
+    .timeline-date span {
+      color: rgba(255,255,255,.56);
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .timeline-date strong {
+      font-size: 42px;
+      line-height: .92;
+      letter-spacing: -.06em;
+    }
+    .timeline-body h3 {
+      font-size: clamp(30px, 4vw, 54px);
+      line-height: .96;
+      letter-spacing: -.06em;
+      margin-bottom: 12px;
+    }
+    .timeline-body p { color: rgba(255,255,255,.68); line-height: 1.42; font-size: 17px; }
+    .micro-list { display: grid; gap: 10px; margin-top: 20px; }
+    .micro-list div {
+      display: grid;
+      grid-template-columns: 116px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .micro-list b { color: rgba(255,255,255,.92); }
+    .micro-list span { color: rgba(255,255,255,.62); line-height: 1.38; }
+
+    .modes-wrap {
+      border-radius: var(--radius-xl);
+      padding: clamp(20px, 4vw, 34px);
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+    }
+    .tabs::-webkit-scrollbar { display: none; }
+    .tabs button {
+      flex: 0 0 auto;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.07);
+      color: rgba(255,255,255,.74);
+      border-radius: 999px;
+      padding: 12px 14px;
+      cursor: pointer;
+      font-weight: 850;
+      transition: .22s ease;
+    }
+    .tabs button.active {
+      color: #111;
+      background: rgba(255,255,255,.94);
+      border-color: rgba(255,255,255,.94);
+    }
+    .plan-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .plan-card {
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.07);
+      border-radius: 28px;
+      padding: 20px;
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .plan-card small {
+      color: rgba(255,255,255,.50);
+      text-transform: uppercase;
+      letter-spacing: .10em;
+      font-size: 11px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .plan-card strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1.02;
+      letter-spacing: -.045em;
+      margin-bottom: 10px;
+    }
+    .plan-card p { color: rgba(255,255,255,.63); line-height: 1.38; margin-bottom: 0; }
+
+    .restaurant-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .restaurant-card {
+      position: relative;
+      border-radius: 34px;
+      padding: 22px;
+      min-height: 250px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .restaurant-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -25% -35% auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(246,212,159,.18), transparent 70%);
+      pointer-events: none;
+    }
+    .restaurant-card h3 { font-size: 28px; letter-spacing: -.05em; margin-bottom: 8px; }
+    .restaurant-card p { color: rgba(255,255,255,.64); line-height: 1.42; margin-bottom: 18px; position: relative; z-index: 2; }
+    .restaurant-card .chip-row { margin-top: 0; }
+    .restaurant-card .small-link { align-self: flex-start; position: relative; z-index: 2; }
+
+    .story-scroll {
+      display: grid;
+      grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
+      gap: clamp(22px, 4vw, 44px);
+      align-items: start;
+    }
+    .sticky-note {
+      position: sticky;
+      top: 108px;
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 42px);
+      min-height: 520px;
+      display: grid;
+      align-content: end;
+      overflow: hidden;
+    }
+    .sticky-note::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('assets/crew-britta.jpg') center 45% / cover no-repeat;
+      opacity: .32;
+      filter: saturate(1.05);
+    }
+    .sticky-note::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.78));
+    }
+    .sticky-note > * { position: relative; z-index: 2; }
+    .sticky-note h2 { font-size: clamp(36px, 5vw, 68px); }
+    .sticky-note p { color: rgba(255,255,255,.72); line-height: 1.42; font-size: 18px; margin-bottom: 0; }
+    .chapter-list { display: grid; gap: 16px; }
+    .chapter {
+      border-radius: 34px;
+      padding: 26px;
+    }
+    .chapter .num { color: rgba(255,255,255,.42); font-weight: 900; letter-spacing: .08em; text-transform: uppercase; font-size: 12px; margin-bottom: 16px; }
+    .chapter h3 { font-size: 34px; letter-spacing: -.055em; line-height: 1; margin-bottom: 10px; }
+    .chapter p { color: rgba(255,255,255,.65); line-height: 1.42; margin-bottom: 0; }
+
+    .checklist-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(320px, .85fr);
+      gap: 18px;
+      align-items: stretch;
+    }
+    .letter-card, .checklist {
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 42px);
+    }
+    .letter-card {
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .letter-card::before {
+      content: "";
+      position: absolute;
+      inset: -35% -25% auto auto;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,210,227,.18), transparent 72%);
+      pointer-events: none;
+    }
+    .letter-card p { color: rgba(255,255,255,.68); line-height: 1.45; font-size: 18px; }
+    .signature {
+      font-size: clamp(28px, 3.6vw, 48px);
+      line-height: .98;
+      letter-spacing: -.06em;
+      font-weight: 900;
+      max-width: 580px;
+    }
+    .checklist h3 { font-size: 34px; letter-spacing: -.055em; margin-bottom: 10px; }
+    .checklist p { color: rgba(255,255,255,.62); line-height: 1.42; margin-bottom: 20px; }
+    .check-item {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 14px 0;
+      border-top: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.75);
+      line-height: 1.35;
+      cursor: pointer;
+    }
+    .check-item input {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      margin: 0;
+      border-radius: 7px;
+      border: 1px solid rgba(255,255,255,.30);
+      background: rgba(255,255,255,.07);
+      display: grid;
+      place-items: center;
+    }
+    .check-item input:checked {
+      background: linear-gradient(135deg, #fff, var(--gold));
+      border-color: transparent;
+    }
+    .check-item input:checked::after {
+      content: "";
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid #111;
+      border-bottom: 2px solid #111;
+      transform: rotate(-45deg) translateY(-1px);
+    }
+    .check-item:has(input:checked) span { color: rgba(255,255,255,.42); text-decoration: line-through; text-decoration-thickness: 1px; }
+
+    .finale { padding: 80px 0 34px; }
+    .finale-card {
+      min-height: 64svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      border-radius: clamp(36px, 6vw, 70px);
+      padding: clamp(30px, 6vw, 74px);
+      position: relative;
+      overflow: hidden;
+    }
+    .finale-card::before {
+      content: "";
+      position: absolute;
+      inset: -20%;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(246,212,159,.24), transparent 27rem),
+        radial-gradient(circle at 76% 32%, rgba(168,219,255,.20), transparent 28rem),
+        radial-gradient(circle at 50% 84%, rgba(255,210,227,.18), transparent 30rem);
+      pointer-events: none;
+    }
+    .finale-card > div { position: relative; z-index: 2; }
+    .big-date {
+      display: inline-flex;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.74);
+      font-weight: 850;
+      margin-bottom: 28px;
+    }
+    .finale-card h2 { font-size: clamp(52px, 9vw, 120px); margin-bottom: 18px; }
+    .finale-card p { color: rgba(255,255,255,.70); font-size: clamp(18px, 2vw, 25px); line-height: 1.34; max-width: 760px; margin: 0 auto 28px; }
+
+    footer {
+      color: rgba(255,255,255,.42);
+      text-align: center;
+      padding: 22px 18px 40px;
+      font-size: 13px;
+    }
+    canvas#confetti {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2500;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px) scale(.985);
+      transition: opacity .72s ease, transform .72s cubic-bezier(.2,.8,.2,1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 1020px) {
+      .hero-layout, .hotel-grid, .story-scroll, .checklist-wrap { grid-template-columns: 1fr; }
+      .portrait-wrap { max-width: 520px; min-height: 620px; margin-inline: auto; width: 100%; }
+      .overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .restaurant-grid, .plan-cards { grid-template-columns: 1fr; }
+      .crew-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .sticky-note { position: relative; top: auto; min-height: 460px; }
+    }
+    @media (max-width: 760px) {
+      .nav { top: 10px; width: calc(100% - 20px); padding: 8px 9px; }
+      .brand span:last-child { display: none; }
+      .nav a { font-size: 11px; padding: 8px 9px; }
+      .container { width: min(calc(100% - 24px), var(--max)); }
+      .hero { padding: 92px 0 48px; }
+      .hero-actions, .map-actions { align-items: stretch; }
+      .pill-button, .ghost-button, .small-link { width: 100%; }
+      .portrait-wrap { min-height: 580px; }
+      .portrait-card { height: 560px; border-radius: 38px; transform: none; }
+      .float-ticket { right: 12px; top: 16px; width: calc(100% - 24px); transform: none; }
+      .countdown-card { left: 14px; bottom: 18px; transform: none; width: calc(100% - 28px); }
+      .overview-grid, .gallery-grid, .crew-grid { grid-template-columns: 1fr; }
+      .wide { grid-column: span 1; }
+      .boarding-wrap { grid-template-columns: 1fr; }
+      .route-line { grid-template-columns: 1fr; text-align: left; }
+      .duration { justify-items: start; }
+      .duration .bar { width: 100%; }
+      .hotel-main { min-height: 470px; border-radius: 36px; }
+      .gallery-card { min-height: 260px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+      .timeline-date { min-height: auto; gap: 16px; }
+      .timeline-date strong { font-size: 34px; }
+      .micro-list div { grid-template-columns: 1fr; gap: 6px; }
+      .amenity-grid { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(50px, 17vw, 82px); }
+      h2 { font-size: clamp(38px, 12vw, 62px); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .001ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <nav class="nav" aria-label="Reise-Navigation">
+    <div class="brand"><div class="brand-mark"><img src="assets/eiffel-pictogram.svg" alt="" aria-hidden="true" /></div><span>Britta x Paris 2026</span></div>
+    <div class="nav-links">
+      <a href="#start">Start</a>
+      <a href="#reise">Reise</a>
+      <a href="#hotel">Hotel</a>
+      <a href="#tage">Tage</a>
+      <a href="#modi">Modi</a>
+      <a href="#kulinarik">Kulinarik</a>
+      <a href="#packen">Packen</a>
+    </div>
+  </nav>
+
+  <main>
+    <section id="start" class="hero">
+      <div class="hero-bg-photo" aria-hidden="true"></div>
+      <div class="eiffel-ghost" aria-hidden="true"><img src="assets/eiffel-pictogram.svg" alt="" aria-hidden="true" /></div>
+      <div class="float-orb orb-1"></div>
+      <div class="float-orb orb-2"></div>
+      <div class="float-orb orb-3"></div>
+      <div class="container hero-layout">
+        <div class="reveal">
+          <div class="hero-badge-row">
+            <div class="eiffel-hero-mark" aria-hidden="true"><img src="assets/eiffel-pictogram.svg" alt="" aria-hidden="true" /></div>
+            <div class="eyebrow"><span class="dot"></span> Eine kleine Schatzkarte zu deinem 40. Geburtstag</div>
+          </div>
+          <h1 class="hero-title">
+            <span>Paris.</span>
+            <span>F&uuml;r uns.</span>
+            <span class="warm">F&uuml;r dich.</span>
+          </h1>
+          <p class="lead"><strong>Britta,</strong> vom 01. bis 04. September 2026 wartet ein kleines Familienkapitel auf dich: Hamburg nach Paris, ein sch&ouml;nes Hotel, Croissants am Morgen, Stadtlichter am Abend - und deine drei Jungs mittendrin.</p>
+          <div class="hero-actions">
+            <a class="pill-button" href="#reise">Schatzkarte &ouml;ffnen <span aria-hidden="true">&#8595;</span></a>
+            <button class="ghost-button" id="celebrateBtn" type="button">Geburtstagsfunkeln starten &#10024;</button>
+          </div>
+          <div class="paris-signature" aria-label="Paris-Signatur">
+            <div class="eiffel-orb" aria-hidden="true"><img src="assets/eiffel-pictogram.svg" alt="" /></div>
+            <div><strong>Paris wartet auf unsere kleine Crew.</strong><span>Eiffelturm, Seine, Rooftoplicht - und ein Geschenk, das erst beim Erleben richtig aufgeht.</span></div>
+          </div>
+        </div>
+
+        <aside class="portrait-wrap reveal" aria-label="Persoenliche Geburtstagsvorschau">
+          <div class="portrait-card glass">
+            <img src="assets/crew-britta.jpg" alt="Britta l&auml;chelt mit Blumen" />
+            <div class="portrait-caption">
+              <span>Das Geburtstagskind</span>
+              <strong>Dieses L&auml;cheln bekommt Paris als Kulisse.</strong>
+            </div>
+          </div>
+          <div class="float-ticket">
+            <div class="stat-label">Boarding</div>
+            <div class="ticket-route">
+              <div><div class="airport">HAM</div><div class="city">Hamburg</div></div>
+              <div class="plane-dot">&#9992;</div>
+              <div><div class="airport">CDG</div><div class="city">Paris</div></div>
+            </div>
+          </div>
+          <div class="countdown-card">
+            <div class="stat-label">Bis Paris</div>
+            <div class="count-number" id="daysToParis">...</div>
+            <div class="count-label" id="countLabel">Tage bis zum ersten Croissant.</div>
+            <div class="count-sub" id="countSub">Der Countdown aktualisiert sich automatisch.</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="reise" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="kicker">Die Enth&uuml;llung</div>
+          <h2>Die Crew.<br>Vier Menschen. Drei N&auml;chte. Ein Paris-Geschenk.</h2>
+          <p>Die Reise ist bewusst so gebaut, dass sie hochwertig wirkt, aber sich nicht gehetzt anf&uuml;hlt: direkte Fl&uuml;ge, Familienzimmer, Fr&uuml;hst&uuml;ck, ein guter Standort und jeden Tag genug Raum f&uuml;r kleine Pausen.</p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="stat-card glass reveal wide">
+            <div><div class="stat-label">Reisezeit</div><div class="stat-value">01. - 04. September</div></div>
+            <div class="stat-note">Drei N&auml;chte in Paris - perfekt f&uuml;r gro&szlig;e Bilder im Kopf und kleine, echte Familienmomente.</div>
+          </article>
+          <article class="stat-card glass reveal">
+            <div><div class="stat-label">Hotel</div><div class="stat-value">Novotel</div></div>
+            <div class="stat-note">Paris Porte de Versailles. Modern, familienfreundlich, mit Fr&uuml;hst&uuml;ck und sch&ouml;nem Rooftop-Gef&uuml;hl.</div>
+          </article>
+          <article class="stat-card glass reveal">
+            <div><div class="stat-label">Bewertung</div><div class="stat-value">8,6</div></div>
+            <div class="stat-note">Fabelhaft bewertet - ein sehr guter Rahmen f&uuml;r einen besonderen Geburtstag.</div>
+          </article>
+          <article class="stat-card glass reveal tall">
+            <div><div class="stat-label">Flug</div><div class="stat-value">Direkt</div></div>
+            <div class="stat-note">Hamburg - Paris ohne Umstieg. Weniger Logistik, mehr Vorfreude.</div>
+          </article>
+          <article class="stat-card glass reveal wide tall">
+            <div><div class="stat-label">Das Motto</div><div class="stat-value">Nicht alles sehen. Das Richtige f&uuml;hlen.</div></div>
+            <div class="stat-note">Eiffelturm-Momente, Seine, Parks, Kinderlachen, eine sch&ouml;ne Hotelbasis - und genug Luft, damit die Reise sich wirklich wie ein Geschenk anf&uuml;hlt.</div>
+          </article>
+          <article class="stat-card glass reveal tall">
+            <div><div class="stat-label">Zimmer</div><div class="stat-value">Familie</div></div>
+            <div class="stat-note">Superior Familienzimmer f&uuml;r Britta, Alex, Mattis und Lennart - inklusive Fr&uuml;hst&uuml;ck.</div>
+          </article>
+        </div>
+
+        <div class="crew-grid" aria-label="Unsere Reisecrew">
+          <article class="crew-card glass reveal">
+            <div class="crew-photo-shell"><img class="crew-photo" src="assets/crew-britta.jpg" alt="Britta" loading="lazy" /></div>
+            <div class="crew-meta"><div class="stat-label">Geburtstagskapit&auml;nin</div><h3>Britta</h3><span class="crew-age">40. Geburtstag</span><p>Das Herz der Reise. Nicht einfach ein Kurzurlaub - sondern ein Paris-Kapitel nur f&uuml;r dich, eingerahmt von uns.</p></div>
+          </article>
+          <article class="crew-card glass reveal">
+            <div class="crew-photo-shell"><img class="crew-photo" src="assets/crew-alex.jpg" alt="Alex" loading="lazy" /></div>
+            <div class="crew-meta"><div class="stat-label">Der Planer</div><h3>Alex</h3><span class="crew-age">Route, Snacks &amp; Magie</span><p>Zust&auml;ndig f&uuml;r Boarding, Kinderlogistik, gute Abk&uuml;rzungen, Fotos - und daf&uuml;r, dass du dich einfach freuen darfst.</p></div>
+          </article>
+          <article class="crew-card glass reveal">
+            <div class="crew-photo-shell"><img class="crew-photo" src="assets/crew-mattis.jpg" alt="Mattis" loading="lazy" /></div>
+            <div class="crew-meta"><div class="stat-label">Der Entdecker</div><h3>Mattis</h3><span class="crew-age">4 Jahre</span><p>Chef f&uuml;r Karussells, Eiffelturm-Suchen, Bootsfahrt-Staunen und die wichtigste Frage: "Was machen wir jetzt?"</p></div>
+          </article>
+          <article class="crew-card glass reveal">
+            <div class="crew-photo-shell"><img class="crew-photo" src="assets/crew-lennart.jpg" alt="Lennart" loading="lazy" /></div>
+            <div class="crew-meta"><div class="stat-label">Der kleine Co-Pilot</div><h3>Lennart</h3><span class="crew-age">9 Monate</span><p>Mini-Entdecker im Buggy oder in der Trage. Der wichtigste Rhythmusgeber f&uuml;r Pausen, Snacks und Kuschelmomente.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="kicker">Kapitel 1</div>
+          <h2>Die Reise beginnt &uuml;ber den Wolken.</h2>
+          <p>Einsteigen in Hamburg, landen in Paris. Kurz genug, um mit Kindern gut machbar zu sein - und lang genug, dass es sich wie ein echtes Abenteuer anf&uuml;hlt.</p>
+        </div>
+
+        <div class="boarding-wrap">
+          <article class="boarding-card glass reveal">
+            <div class="flight-tag">Hinflug - Di, 01.09.2026</div>
+            <div class="route-line">
+              <div><div class="time">18:35</div><div class="airport-code">HAM - Hamburg</div></div>
+              <div class="duration"><span>1:30 Std.</span><div class="bar"></div><span>Direktflug</span></div>
+              <div><div class="time">20:05</div><div class="airport-code">CDG - Paris</div></div>
+            </div>
+            <div class="chip-row"><span class="chip">Eurowings</span><span class="chip">23 kg Gep&auml;ck p. P.</span><span class="chip">Abends ankommen</span></div>
+          </article>
+
+          <article class="boarding-card glass reveal">
+            <div class="flight-tag">R&uuml;ckflug - Fr, 04.09.2026</div>
+            <div class="route-line">
+              <div><div class="time">21:00</div><div class="airport-code">CDG - Paris</div></div>
+              <div class="duration"><span>1:30 Std.</span><div class="bar"></div><span>Direktflug</span></div>
+              <div><div class="time">22:30</div><div class="airport-code">HAM - Hamburg</div></div>
+            </div>
+            <div class="chip-row"><span class="chip">Eurowings</span><span class="chip">Ein letzter Paris-Tag</span><span class="chip">Sp&auml;ter R&uuml;ckflug</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="hotel" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="kicker">Kapitel 2</div>
+          <h2>Unser Zuhause auf Zeit.</h2>
+          <p>Das Novotel Paris Porte de Versailles ist die Basis f&uuml;r diese kleine Expedition: modern, komfortabel, mit Familienzimmer und einem Standort, von dem aus Paris gut erreichbar bleibt.</p>
+        </div>
+
+        <div class="hotel-grid">
+          <article class="hotel-main reveal">
+            <img src="assets/hotel-room.jpg" alt="Zimmer im Novotel Paris Porte de Versailles" loading="lazy" />
+            <div class="hotel-overlay">
+              <h3>Novotel Paris Porte de Versailles</h3>
+              <p>Superior Familienzimmer, Fr&uuml;hst&uuml;ck und eine Hotelatmosph&auml;re, die nach Ankommen aussieht - genau richtig nach Flug, Stadt und Kinderabenteuer.</p>
+            </div>
+          </article>
+
+          <aside class="hotel-side">
+            <article class="rating-card glass reveal">
+              <div class="stat-label">Hotelgef&uuml;hl</div>
+              <div class="rating-big">8,6</div>
+              <div class="rating-text">Fabelhaft bewertet, familienfreundlich, WLAN, Restaurant, Wellness-/Fitnessangebote, Parkplatz und Babyausstattung - ohne dass die Reise wie Logistik aussieht.</div>
+              <div class="amenity-grid">
+                <div class="amenity">Familienzimmer</div>
+                <div class="amenity">Fr&uuml;hst&uuml;ck</div>
+                <div class="amenity">Restaurant</div>
+                <div class="amenity">Babyausstattung</div>
+                <div class="amenity">Spielzimmer</div>
+                <div class="amenity">Parkplatz</div>
+              </div>
+            </article>
+
+            <article class="map-card glass reveal">
+              <div class="stat-label">Adresse</div>
+              <h3 style="font-size:28px;letter-spacing:-.05em;margin:0 0 14px;">4 Avenue de la Porte de la Plaine, 75015 Paris</h3>
+              <iframe class="map-frame" title="Google Maps - Novotel Paris Porte de Versailles" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Novotel%20Paris%20Porte%20de%20Versailles%2C%204%20Avenue%20de%20la%20Porte%20de%20la%20Plaine%2C%2075015%20Paris&output=embed"></iframe>
+              <div class="map-actions">
+                <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Novotel%20Paris%20Porte%20de%20Versailles%2C%204%20Avenue%20de%20la%20Porte%20de%20la%20Plaine%2C%2075015%20Paris" target="_blank" rel="noopener">In Google Maps &ouml;ffnen</a>
+                <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=restaurants%20near%20Novotel%20Paris%20Porte%20de%20Versailles" target="_blank" rel="noopener">Restaurants in der N&auml;he</a>
+              </div>
+            </article>
+          </aside>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-card reveal"><img src="assets/hotel-restaurant.jpg" alt="Restaurantbereich des Hotels" loading="lazy" /><figcaption class="gallery-label">Restaurant &amp; Ankommen<span>Sch&ouml;n, warm, unkompliziert.</span></figcaption></figure>
+          <figure class="gallery-card reveal"><img src="assets/hotel-bathroom.jpg" alt="Badezimmer mit Badewanne" loading="lazy" /><figcaption class="gallery-label">Badezimmer<span>Praktisch mit kleinen Kindern.</span></figcaption></figure>
+          <figure class="gallery-card reveal"><img src="assets/hotel-room.jpg" alt="Hotelzimmer mit grossem Fenster" loading="lazy" /><figcaption class="gallery-label">Zimmer<span>Ruhige Basis nach langen Tagen.</span></figcaption></figure>
+          <figure class="gallery-card reveal"><img src="assets/hotel-rooftop.jpg" alt="Rooftop mit Blick &uuml;ber Paris" loading="lazy" /><figcaption class="gallery-label">Rooftop-Gef&uuml;hl<span>Paris von oben, Lichter inklusive.</span></figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="tage" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="kicker">Kapitel 3</div>
+          <h2>Der rote Faden f&uuml;r unsere Tage.</h2>
+          <p>Kein straffer Stundenplan, sondern eine gute Dramaturgie: ankommen, staunen, spielen, genie&szlig;en, langsam wieder verabschieden.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-date glass"><span>Tag 1 - Dienstag</span><strong>Ankommen</strong></div>
+            <div class="timeline-body glass">
+              <h3>Hamburg - Paris - Hotellicht.</h3>
+              <p>Der erste Abend bleibt weich. Nach dem Direktflug geht es zum Hotel, die Kinder kommen runter, und Paris beginnt ohne Druck.</p>
+              <div class="micro-list">
+                <div><b>Vorher</b><span>Ausweise, Buchungen, Snacks, Buggy/Trage und eine kleine Flugbesch&auml;ftigung griffbereit.</span></div>
+                <div><b>20:05</b><span>Landung in Paris CDG. Danach Transfer zum Novotel und Check-in.</span></div>
+                <div><b>Abend</b><span>Nur noch ankommen: kleines Essen, Schlafanzug, Familienkuscheln, Paris-Gef&uuml;hl abspeichern.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date glass"><span>Tag 2 - Mittwoch</span><strong>Magie</strong></div>
+            <div class="timeline-body glass">
+              <h3>Eiffelturm, Seine und ein Parkmoment.</h3>
+              <p>Der Tag f&uuml;r die gro&szlig;en Bilder: Eiffelturm sehen, Boot fahren, Croissant essen und danach genug Pause f&uuml;r Mattis und Lennart.</p>
+              <div class="micro-list">
+                <div><b>Morgen</b><span>Fr&uuml;hst&uuml;ck, dann Trocad&eacute;ro oder Champ de Mars. Der Eiffelturm wird zum ersten echten Paris-Moment.</span></div>
+                <div><b>Mittag</b><span>Seine-Bootsfahrt: viel Stadt sehen, ohne viel laufen zu m&uuml;ssen.</span></div>
+                <div><b>Nachmittag</b><span>Jardin du Luxembourg oder Tuilerien: Gr&uuml;n, Schatten, Spielm&ouml;glichkeit, kein Programmdruck.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date glass"><span>Tag 3 - Donnerstag</span><strong>Wunsch-Tag</strong></div>
+            <div class="timeline-body glass">
+              <h3>Familienabenteuer nach Stimmung.</h3>
+              <p>Hier entscheidet nicht die Liste, sondern die Energie. Paris bietet an diesem Tag mehrere gute Wege: kindgerecht, abenteuerlich, kulinarisch oder ganz sanft.</p>
+              <div class="micro-list">
+                <div><b>Sanft</b><span>Jardin d'Acclimatation: Fahrgesch&auml;fte, kleine Attraktionen, Parkwege und ein Tag, der mit Kindern gut funktioniert.</span></div>
+                <div><b>Abenteuer</b><span>Disneyland Paris als gro&szlig;e Option - nur wenn alle Lust auf einen langen, intensiven Tag haben.</span></div>
+                <div><b>Regen</b><span>Cit&eacute; des Sciences oder Aquarium de Paris als Indoor-Plan, falls Wetter oder Kraft nicht mitspielen.</span></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-date glass"><span>Tag 4 - Freitag</span><strong>Au revoir</strong></div>
+            <div class="timeline-body glass">
+              <h3>Ein letzter Blick, dann nach Hause.</h3>
+              <p>Der R&uuml;ckflug ist erst am Abend. Deshalb darf der letzte Tag langsam sein: Fr&uuml;hst&uuml;ck, Gep&auml;ckstrategie, ein letzter Spaziergang, dann CDG.</p>
+              <div class="micro-list">
+                <div><b>Vormittag</b><span>Fr&uuml;hst&uuml;ck, Check-out, Gep&auml;ck abgeben oder Transfer gut planen.</span></div>
+                <div><b>Nachmittag</b><span>Louvre-Hof, Tuilerien, ein Caf&eacute; oder ein letzter Hotel-/Rooftop-Moment - je nach Kinderlaune.</span></div>
+                <div><b>21:00</b><span>R&uuml;ckflug nach Hamburg. M&uuml;de, aber mit sehr vielen Bildern im Kopf.</span></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="modi" class="section">
+      <div class="container">
+        <div class="section-header reveal center">
+          <div class="kicker">Familienmodus</div>
+          <h2>Je nach Wetter, Energie und Kinderlaune.</h2>
+          <p>Diese Reise ist kein starres Programm. Sie hat Modi. Einfach ausw&auml;hlen und die passende Tagesidee erscheint.</p>
+        </div>
+        <div class="modes-wrap glass reveal">
+          <div class="tabs" role="tablist" aria-label="Reise-Modi">
+            <button type="button" class="active" data-plan="family" role="tab" aria-selected="true">Familienmodus</button>
+            <button type="button" data-plan="soft" role="tab" aria-selected="false">Sanft &amp; entspannt</button>
+            <button type="button" data-plan="sun" role="tab" aria-selected="false">Sonnentag</button>
+            <button type="button" data-plan="rain" role="tab" aria-selected="false">Regentag</button>
+            <button type="button" data-plan="adventure" role="tab" aria-selected="false">Abenteuerlich</button>
+            <button type="button" data-plan="culinary" role="tab" aria-selected="false">Kulinarisch</button>
+            <button type="button" data-plan="birthday" role="tab" aria-selected="false">Geburtstagsmagie</button>
+          </div>
+          <div class="plan-cards" id="planCards" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kulinarik" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="kicker">Kulinarischer Kompass</div>
+          <h2>Gute Essensideen rund um unser Hotel.</h2>
+          <p>Mit kleinen Kindern ist die beste Restaurantstrategie einfach: ein sch&ouml;ner Ort f&uuml;r Britta, ein Backup f&uuml;r Mattis, genug Flexibilit&auml;t f&uuml;r Lennart und m&ouml;glichst kurze Wege.</p>
+        </div>
+
+        <div class="restaurant-grid">
+          <article class="restaurant-card glass reveal">
+            <div><div class="stat-label">Direkt am Hotel</div><h3>Caf&eacute; Ros&eacute;</h3><p>Provence-Gef&uuml;hl, unkomplizierte K&uuml;che und eine gute Option f&uuml;r ein entspanntes Essen ohne lange Wege.</p></div>
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Cafe%20Rose%204%20avenue%20de%20la%20Porte%20de%20la%20Plaine%2075015%20Paris" target="_blank" rel="noopener">Karte &ouml;ffnen</a>
+          </article>
+          <article class="restaurant-card glass reveal">
+            <div><div class="stat-label">Rooftop</div><h3>Pedzouille La Grange</h3><p>Die Geburtstags-Option: Rooftop im Novotel, franz&ouml;sische K&uuml;che, Blick &uuml;ber Paris und am besten mit Reservierung.</p></div>
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Pedzouille%20La%20Grange%20Novotel%20Paris%20Porte%20de%20Versailles" target="_blank" rel="noopener">Karte &ouml;ffnen</a>
+          </article>
+          <article class="restaurant-card glass reveal">
+            <div><div class="stat-label">Pizza-Plan B</div><h3>Pizzou Issy</h3><p>Wenn es mit Kindern schnell, lecker und unkompliziert sein soll: Pizza ist oft die beste Familienversicherung.</p></div>
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Pizzou%20Issy%2019%20Rue%20Ernest%20Renan%2092130%20Issy-les-Moulineaux" target="_blank" rel="noopener">Karte &ouml;ffnen</a>
+          </article>
+          <article class="restaurant-card glass reveal">
+            <div><div class="stat-label">Bistro</div><h3>L'Insoumise</h3><p>Ruhiger, erwachsener, bistronomischer. Gut f&uuml;r einen Abend, an dem alle entspannt sind und ihr etwas mehr Genuss wollt.</p></div>
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=L%27Insoumise%20Restaurant%20Paris%2015%20Porte%20de%20Versailles" target="_blank" rel="noopener">Karte &ouml;ffnen</a>
+          </article>
+          <article class="restaurant-card glass reveal">
+            <div><div class="stat-label">Klein &amp; fein</div><h3>Biscotte</h3><p>Eher ein sch&ouml;ner Erwachsenenmoment als Kinder-Chaos. Reservieren und vorher schauen, ob Uhrzeit und Stimmung passen.</p></div>
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=Restaurant%20Biscotte%2022%20Rue%20Desnouettes%2075015%20Paris" target="_blank" rel="noopener">Karte &ouml;ffnen</a>
+          </article>
+          <article class="restaurant-card glass reveal">
+            <div><div class="stat-label">Backup</div><h3>Picknick &amp; Boulangerie</h3><p>Der untersch&auml;tzte Paris-Trick: Croissants, Obst, Sandwiches, Wasser - und dann ein Park statt Restaurantdruck.</p></div>
+            <a class="small-link" href="https://www.google.com/maps/search/?api=1&query=boulangerie%20near%20Novotel%20Paris%20Porte%20de%20Versailles" target="_blank" rel="noopener">B&auml;ckerei suchen</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container story-scroll">
+        <aside class="sticky-note glass reveal">
+          <div>
+            <div class="kicker">Das Gef&uuml;hl dahinter</div>
+            <h2>Ein Geschenk, das weiterz&auml;hlt.</h2>
+            <p>Der QR-Code ist nur der Anfang. Eigentlich geht es um das, was danach kommt: Mattis mit gro&szlig;en Augen, Lennart im Buggy, wir zwei irgendwo zwischen Kaffee, Kinderchaos und Paris-Licht.</p>
+          </div>
+        </aside>
+        <div class="chapter-list">
+          <article class="chapter glass reveal"><div class="num">Notiz 01</div><h3>Die Reise darf leicht bleiben.</h3><p>Wir m&uuml;ssen nicht alles sehen. Wir d&uuml;rfen Paris so erleben, wie es mit Kindern sch&ouml;n ist: langsam, hell, verspielt und mit Pausen.</p></article>
+          <article class="chapter glass reveal"><div class="num">Notiz 02</div><h3>Ein Highlight pro Halbtag reicht.</h3><p>Eiffelturm, Boot, Park, Rooftop, Spielplatz, Disney-Option - es wird genug Magie geben. Mehr Plan macht es nicht automatisch sch&ouml;ner.</p></article>
+          <article class="chapter glass reveal"><div class="num">Notiz 03</div><h3>Britta steht im Mittelpunkt.</h3><p>Diese Reise ist Familienzeit, aber sie ist vor allem dein Geburtstagsgeschenk: Paris als Kulisse f&uuml;r ein neues Kapitel.</p></article>
+          <article class="chapter glass reveal"><div class="num">Notiz 04</div><h3>Das beste Souvenir sind kleine Rituale.</h3><p>Ein Foto an derselben Ecke, ein Croissant am Morgen, eine Bootsfahrt auf der Seine, ein Abendblick vom Hotel - Dinge, an die man sich wirklich erinnert.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="packen" class="section">
+      <div class="container checklist-wrap">
+        <article class="letter-card glass reveal">
+          <div>
+            <div class="kicker">Ein kleiner Brief</div>
+            <h2>Britta, das ist dein Kapitel Paris.</h2>
+            <p>Zum 40. wollte ich dir nichts schenken, das in einer Schublade verschwindet. Ich wollte dir etwas schenken, das sich anf&uuml;hlt wie eine Erinnerung, bevor sie &uuml;berhaupt passiert ist.</p>
+            <p>Paris mit Mattis und Lennart wird nicht perfekt glatt. Es wird Snacks, Pausen, m&uuml;de Beine und Kinderlogistik geben. Aber genau dazwischen liegen die Momente, die bleiben: dein Lachen, unsere kleine Crew, Alex mit Plan und Kamera, Stadtlichter und dieses Gef&uuml;hl von "wei&szlig;t du noch?".</p>
+          </div>
+          <div class="signature">Mit dir ist jeder Ort sch&ouml;ner. Paris bekommt nur die bessere Kulisse. Dein Alex.</div>
+        </article>
+
+        <aside class="checklist glass reveal" aria-label="Packliste">
+          <h3>Packliste f&uuml;r die kleine Crew</h3>
+          <p>Zum Abhaken. Die Auswahl bleibt auf diesem Ger&auml;t gespeichert.</p>
+          <label class="check-item"><input type="checkbox" data-check="ids"><span>Ausweise / Reisedokumente f&uuml;r Britta, Alex, Mattis und Lennart</span></label>
+          <label class="check-item"><input type="checkbox" data-check="booking"><span>Flug- und Hotelunterlagen digital griffbereit</span></label>
+          <label class="check-item"><input type="checkbox" data-check="buggy"><span>Leichter Buggy plus Trage f&uuml;r Metro, Wege und m&uuml;de Arme</span></label>
+          <label class="check-item"><input type="checkbox" data-check="mattis"><span>Mattis-Set: Kopfh&ouml;rer, kleines Spielzeug, Snacks, Wechselkleidung</span></label>
+          <label class="check-item"><input type="checkbox" data-check="lennart"><span>Lennart-Set: Windeln, Feuchtt&uuml;cher, Brei/Milch, Schlafsachen, Ersatzbody</span></label>
+          <label class="check-item"><input type="checkbox" data-check="weather"><span>D&uuml;nne Schichten, Sonnenhut, Regenjacken, bequeme Schuhe</span></label>
+          <label class="check-item"><input type="checkbox" data-check="meds"><span>Kleine Reiseapotheke, Fieberthermometer, pers&ouml;nliche Medikamente</span></label>
+          <label class="check-item"><input type="checkbox" data-check="birthday"><span>Ein sch&ouml;nes Outfit f&uuml;r Brittas Geburtstags-/Rooftop-Moment</span></label>
+          <label class="check-item"><input type="checkbox" data-check="photos"><span>Platz im Handy f&uuml;r sehr viele Paris-Fotos</span></label>
+        </aside>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="container">
+        <div class="finale-card glass reveal">
+          <div>
+            <div class="big-date">01.09.2026 - 04.09.2026 - Paris</div>
+            <h2>Bon voyage, mein Herz.</h2>
+            <p>Eine Reise, die als QR-Code beginnt - und hoffentlich als eines unserer sch&ouml;nsten Familienkapitel endet.</p>
+            <button class="pill-button" id="finalConfetti" type="button">Noch einmal funkeln lassen &#10024;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Private Reise&uuml;bersicht - gemacht f&uuml;r Brittas 40. Geburtstag
+  </footer>
+
+  <script>
+    const progressBar = document.getElementById('progressBar');
+    const updateProgress = () => {
+      const h = document.documentElement;
+      const scrolled = h.scrollTop || document.body.scrollTop;
+      const max = h.scrollHeight - h.clientHeight;
+      progressBar.style.width = max > 0 ? `${(scrolled / max) * 100}%` : '0%';
+    };
+    document.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('in');
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    revealEls.forEach(el => io.observe(el));
+
+    const daysEl = document.getElementById('daysToParis');
+    const countLabel = document.getElementById('countLabel');
+    const countSub = document.getElementById('countSub');
+    const tripStart = new Date('2026-09-01T18:35:00+02:00').getTime();
+    const tripEnd = new Date('2026-09-04T22:30:00+02:00').getTime();
+
+    function updateCountdownToParis() {
+      const now = Date.now();
+      const distance = tripStart - now;
+      const dayMs = 1000 * 60 * 60 * 24;
+      const hourMs = 1000 * 60 * 60;
+      const minuteMs = 1000 * 60;
+
+      if (Number.isNaN(tripStart) || Number.isNaN(tripEnd)) {
+        daysEl.textContent = 'Paris';
+        countLabel.textContent = 'Der Countdown wird geladen.';
+        if (countSub) countSub.textContent = 'Bitte die Seite neu laden.';
+        return;
+      }
+
+      if (distance > 0) {
+        const days = Math.floor(distance / dayMs);
+        const hours = Math.floor((distance % dayMs) / hourMs);
+        const minutes = Math.floor((distance % hourMs) / minuteMs);
+        const seconds = Math.floor((distance % minuteMs) / 1000);
+
+        if (days >= 1) {
+          daysEl.textContent = String(days);
+          countLabel.textContent = days === 1 ? 'Tag bis zum Abflug.' : 'Tage bis zum Abflug.';
+          if (countSub) countSub.textContent = `${hours} Std. ${minutes} Min. ${seconds} Sek. bis HAM -> CDG.`;
+        } else if (hours >= 1) {
+          daysEl.textContent = `${hours}:${String(minutes).padStart(2, '0')}`;
+          countLabel.textContent = 'Stunden bis zum Boarding.';
+          if (countSub) countSub.textContent = `${seconds} Sek. bis zum naechsten kleinen Funkeln.`;
+        } else {
+          daysEl.textContent = String(Math.max(1, minutes));
+          countLabel.textContent = minutes === 1 ? 'Minute bis zum Abflug.' : 'Minuten bis zum Abflug.';
+          if (countSub) countSub.textContent = `${seconds} Sek. - gleich beginnt Paris.`;
+        }
+        return;
+      }
+
+      if (now >= tripStart && now <= tripEnd) {
+        daysEl.textContent = 'Jetzt';
+        countLabel.textContent = 'Paris ist gerade unser Kapitel.';
+        if (countSub) countSub.textContent = 'Diese Reise laeuft gerade. Bitte einmal tief einatmen und geniessen.';
+        return;
+      }
+
+      daysEl.textContent = 'Merci';
+      countLabel.textContent = 'Diese Reise ist jetzt eine Erinnerung.';
+      if (countSub) countSub.textContent = 'Der Countdown ist vorbei. Die Geschichte bleibt.';
+    }
+
+    updateCountdownToParis();
+    setInterval(updateCountdownToParis, 1000);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) updateCountdownToParis();
+    });
+
+    const plans = {
+      family: [
+        { time: 'Grundregel', title: 'Ein Highlight pro Halbtag', text: 'Mit Mattis und Lennart bleibt die Reise schoen, wenn danach immer Pause, Snack oder Spielzeit folgt.' },
+        { time: 'Logistik', title: 'Buggy plus Trage', text: 'Buggy f&uuml;r lange Wege, Trage f&uuml;r Treppen, Metro, volle Orte und Lennarts Schlafphasen.' },
+        { time: 'Timing', title: 'Fr&uuml;h starten, fr&uuml;h stoppen', text: 'Vormittags die gro&szlig;en Dinge. Nachmittags darf Paris weicher, gr&uuml;ner und spontaner werden.' }
+      ],
+      soft: [
+        { time: 'Vormittag', title: 'Eiffelturm von aussen', text: 'Trocad&eacute;ro oder Champ de Mars. Gro&szlig;es Paris-Gef&uuml;hl ohne Warteschlangenstress.' },
+        { time: 'Mittag', title: 'Hotelpause oder Park', text: 'Essen, Wickeln, Buggy-Schlaf. Kein schlechtes Gewissen wegen Pausen.' },
+        { time: 'Nachmittag', title: 'Karussell und Croissant', text: 'Ein kleines Ritual, ein Foto, ein Moment. Danach wieder Tempo rausnehmen.' }
+      ],
+      sun: [
+        { time: 'Morgen', title: 'Trocad&eacute;ro & Seine', text: 'Fr&uuml;h los, wenn es heller und leerer ist. Danach Bootsfahrt statt Laufmarathon.' },
+        { time: 'Mittag', title: 'Picknick im Gruenen', text: 'Boulangerie, Obst, Wasser, Decke. Paris darf auch einfach schmecken.' },
+        { time: 'Sp&auml;ter', title: 'Luxembourg oder Tuilerien', text: 'Schatten, Spielm&ouml;glichkeit und genug Platz f&uuml;r Kinderenergie.' }
+      ],
+      rain: [
+        { time: 'Morgen', title: 'Cite des Sciences', text: 'Indoor entdecken, spielen, anfassen. Besonders gut, wenn das Wetter kippt.' },
+        { time: 'Alternative', title: 'Aquarium de Paris', text: 'Sehr kindgerecht, visuell stark und wetterunabh&auml;ngig nahe Trocad&eacute;ro.' },
+        { time: 'Nachmittag', title: 'Caf&eacute; + Hotelkomfort', text: 'Warme Getr&auml;nke, kurzer Stadtmoment und dann zur&uuml;ck in die sichere Basis.' }
+      ],
+      adventure: [
+        { time: 'Gro&szlig;', title: 'Disneyland Paris', text: 'Der maximale Abenteuer-Tag. Nur ein Park, kein Park-Hopping, fr&uuml;h hin und R&uuml;ckweg nicht zu sp&auml;t.' },
+        { time: 'Familienfreundlich', title: 'Jardin d\'Acclimatation', text: 'Fahrgesch&auml;fte, Park, kleine Attraktionen. Abenteuerlich, aber deutlich entspannter als Disney.' },
+        { time: 'Stadtabenteuer', title: 'Montmartre kurz & schoen', text: 'Sacr&eacute;-C&oelig;ur, Aussicht, Karussell. Mit Buggy nur kleine Route, weil es steil werden kann.' }
+      ],
+      culinary: [
+        { time: 'Hotelnah', title: 'Cafe Rose', text: 'Sehr guter Startpunkt, wenn die Kinder nicht mehr weit laufen sollen.' },
+        { time: 'Geburtstag', title: 'Pedzouille La Grange', text: 'Rooftop, franz&ouml;sische K&uuml;che, Paris-Blick. F&uuml;r Brittas besonderen Abend vorher reservieren.' },
+        { time: 'Backup', title: 'Pizza oder Picknick', text: 'Pizzou Issy oder Boulangerie-Picknick. Wenn Kinder m&uuml;de sind, ist einfach oft perfekt.' }
+      ],
+      birthday: [
+        { time: 'Morgen', title: 'Ein Foto nur f&uuml;r Britta', text: 'Nicht nur Kinderfotos: ein sch&ouml;nes Geburtstagsbild mit Paris als Kulisse.' },
+        { time: 'Mittag', title: 'Ein kleines Ritual', text: 'Croissant, Kaffee, Karte schreiben oder ein Mini-Souvenir, das wirklich an diesen Trip erinnert.' },
+        { time: 'Abend', title: 'Rooftop-Moment', text: 'Wenn es passt: ein Drink, ein Dessert oder einfach der Blick &uuml;ber Paris.' }
+      ]
+    };
+
+    const planCards = document.getElementById('planCards');
+    const renderPlan = (key) => {
+      planCards.innerHTML = plans[key].map(item => `
+        <article class="plan-card">
+          <div>
+            <small>${item.time}</small>
+            <strong>${item.title}</strong>
+          </div>
+          <p>${item.text}</p>
+        </article>
+      `).join('');
+    };
+    renderPlan('family');
+
+    document.querySelectorAll('[data-plan]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('[data-plan]').forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        renderPlan(btn.dataset.plan);
+      });
+    });
+
+    document.querySelectorAll('[data-check]').forEach(input => {
+      const key = `paris-britta-check-${input.dataset.check}`;
+      input.checked = localStorage.getItem(key) === 'true';
+      input.addEventListener('change', () => localStorage.setItem(key, input.checked));
+    });
+
+    const canvas = document.getElementById('confetti');
+    const ctx = canvas.getContext('2d');
+    let pieces = [];
+    const colors = ['#f6d49f', '#a8dbff', '#ffd2e3', '#ffffff', '#bcf2d0'];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth * devicePixelRatio;
+      canvas.height = window.innerHeight * devicePixelRatio;
+      ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function launchConfetti() {
+      const count = window.innerWidth < 720 ? 90 : 155;
+      pieces = Array.from({ length: count }, () => ({
+        x: Math.random() * window.innerWidth,
+        y: -20 - Math.random() * window.innerHeight * .25,
+        w: 6 + Math.random() * 8,
+        h: 8 + Math.random() * 12,
+        vy: 2 + Math.random() * 4,
+        vx: -1.5 + Math.random() * 3,
+        r: Math.random() * Math.PI,
+        vr: -.14 + Math.random() * .28,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        life: 0
+      }));
+      requestAnimationFrame(tickConfetti);
+    }
+
+    function tickConfetti() {
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+      pieces.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.r += p.vr;
+        p.life += 1;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.r);
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.max(0, 1 - p.life / 260);
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx.restore();
+      });
+      pieces = pieces.filter(p => p.y < window.innerHeight + 40 && p.life < 260);
+      if (pieces.length) requestAnimationFrame(tickConfetti);
+      else ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    }
+
+    document.getElementById('celebrateBtn').addEventListener('click', launchConfetti);
+    document.getElementById('finalConfetti').addEventListener('click', launchConfetti);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) launchConfetti();
+      }, 650);
+    });
+  </script>
+</body>
+</html>
